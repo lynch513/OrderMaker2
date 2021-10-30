@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderMaker.Models
 {
@@ -8,16 +10,16 @@ namespace OrderMaker.Models
         [Description("ФИО")]
         public string Name { get; set; }
         
-        [Description("доп. ФИО")]
+        [Description("Доп. ФИО")]
         public string AdditionalName { get; set; }
         
-        [Description("специальность")]
+        [Description("Группа")]
+        public GroupType Group { get; set; }
+        
+        [Description("Специальность")]
         public string Speciality { get; set; }
         
-        [Description("должности")]
+        [Description("Должности")]
         public PostType[] Posts { get; set; }
-        
-        [Description("группа")]
-        public GroupType Group { get; set; }
     }
 }

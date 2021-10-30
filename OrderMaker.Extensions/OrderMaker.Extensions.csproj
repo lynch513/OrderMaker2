@@ -4,8 +4,4 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\OrderMaker.Extensions\OrderMaker.Extensions.csproj" />
-    </ItemGroup>
-
 </Project>

@@ -4,19 +4,19 @@ namespace OrderMaker.Models
 {
     public enum PostType
     {
-        [Description("член бригады")]
+        [Description("Член бригады")]
         Member,
-        [Description("наблюдающий")]
+        [Description("Наблюдающий")]
         Watcher,
-        [Description("производитель работ")]
+        [Description("Производитель работ")]
         Maker,
-        [Description("допускающий")]
+        [Description("Допускающий")]
         Admitter,
-        [Description("ответственный руководитель работ")]
+        [Description("Ответственный руководитель работ")]
         Supervisor,
-        [Description("выдающий наряд")]
+        [Description("Выдающий наряд")]
         Issuer,
-        [Description("диспетчер")]
+        [Description("Диспетчер")]
         Dispatcher
     }
 }
