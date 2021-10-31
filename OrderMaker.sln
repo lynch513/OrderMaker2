@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderMaker.Extensions", "Or
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderMaker.Models.Tests", "OrderMaker.Models.Tests\OrderMaker.Models.Tests.csproj", "{ACC146BC-7424-4609-862A-A372CE8CA20B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderMaker.Converters", "OrderMaker.Converters\OrderMaker.Converters.csproj", "{EE12B414-1393-4B1E-9CB7-EC510C979AF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderMaker.Converters.Tests", "OrderMaker.Converters.Tests\OrderMaker.Converters.Tests.csproj", "{54DF56F7-00A2-493E-A6B0-57F0E8E03912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{ACC146BC-7424-4609-862A-A372CE8CA20B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC146BC-7424-4609-862A-A372CE8CA20B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC146BC-7424-4609-862A-A372CE8CA20B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE12B414-1393-4B1E-9CB7-EC510C979AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE12B414-1393-4B1E-9CB7-EC510C979AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE12B414-1393-4B1E-9CB7-EC510C979AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE12B414-1393-4B1E-9CB7-EC510C979AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DF56F7-00A2-493E-A6B0-57F0E8E03912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DF56F7-00A2-493E-A6B0-57F0E8E03912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DF56F7-00A2-493E-A6B0-57F0E8E03912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DF56F7-00A2-493E-A6B0-57F0E8E03912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

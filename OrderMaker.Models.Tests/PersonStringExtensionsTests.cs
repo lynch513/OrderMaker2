@@ -5,7 +5,7 @@ using OrderMaker.Models.Utils;
 
 namespace OrderMaker.Models.Tests
 {
-    public class PersonTests
+    public class PersonStringExtensionsTests
     {
         [SetUp]
         public void Setup()

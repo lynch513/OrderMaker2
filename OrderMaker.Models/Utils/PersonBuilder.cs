@@ -112,7 +112,8 @@ namespace OrderMaker.Models
 
         private void AddPost(PostType post)
         {
-            var posts = new HashSet<PostType>(_person.Posts) { post };
+            var posts = _person.Posts == null ? 
+                new HashSet<PostType>() { post } : new HashSet<PostType>(_person.Posts) { post };
             _person.Posts = posts.ToArray();
         }
     }
