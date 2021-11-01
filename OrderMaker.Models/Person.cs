@@ -1,11 +1,9 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using OrderMaker.Models.Interfaces;
 
 namespace OrderMaker.Models
 {
-    public class Person
+    public class Person : IPerson
     {
         [Description("ФИО")]
         public string Name { get; set; }

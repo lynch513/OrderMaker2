@@ -23,11 +23,11 @@ namespace OrderMaker.Converters.Tests
                 .Build();
 
             var personString = @"{
-  ""Name"": ""Иванов И.И."",
-  ""AdditionalName"": ""Иванову И.И."",
-  ""Group"": ""Three"",
-  ""Speciality"": ""тракторист"",
-  ""Posts"": [
+  ""ФИО"": ""Иванов И.И."",
+  ""ДопФИО"": ""Иванову И.И."",
+  ""Группа"": ""Three"",
+  ""Специальность"": ""тракторист"",
+  ""Должности"": [
     ""Member""
   ]
 }";
