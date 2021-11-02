@@ -16,8 +16,6 @@ namespace OrderMaker.Converters
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<PostType, PostTypeDto>();
-                cfg.CreateMap<GroupType, GroupTypeDto>();
                 cfg.CreateMap<Person, PersonDto>();
             });
             _mapper = new Mapper(config);

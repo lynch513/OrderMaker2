@@ -1,24 +1,26 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace OrderMaker.Converters.DTO
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum PostTypeDto
     {
-        [JsonProperty("ЧленБригады")]
+        [EnumMember(Value = "ЧленБригады")]
         Member,
-        [JsonProperty("Наблюдающий")]
+        [EnumMember(Value = "Наблюдающий")]
         Watcher,
-        [JsonProperty("ПроизводительРабот")]
+        [EnumMember(Value = "ПроизводительРабот")]
         Maker,
-        [JsonProperty("Допускающий")]
+        [EnumMember(Value = "Допускающий")]
         Admitter,
-        [JsonProperty("ОтветственныйРуководительРабот")]
+        [EnumMember(Value = "ОтветственныйРуководительРабот")]
         Supervisor,
-        [JsonProperty("ВыдающийНаряд")]
+        [EnumMember(Value = "ВыдающийНаряд")]
         Issuer,
-        [JsonProperty("Диспетчер")]
+        [EnumMember(Value = "Диспетчер")]
         Dispatcher
     }
 }

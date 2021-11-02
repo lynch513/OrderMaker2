@@ -8,7 +8,7 @@ namespace OrderMaker.Models.Utils
         {
             var name = person.Name;
             var group = person.Group;
-            return group == GroupType.None ? name : $"{name} {group.GetDescription()}";
+            return group == GroupType.None ? name : $"{name} {group.GetDisplayName()}";
         }
 
         public static string GetAdditionalNameOrName(this Person person) =>
@@ -18,7 +18,7 @@ namespace OrderMaker.Models.Utils
         {
             var additionalNameOrName = GetAdditionalNameOrName(person);
             var group = person.Group;
-            return group == GroupType.None ? additionalNameOrName : $"{additionalNameOrName} {group.GetDescription()}";
+            return group == GroupType.None ? additionalNameOrName : $"{additionalNameOrName} {group.GetDisplayName()}";
         }
 
         public static string GetNameWithGroupAndSpeciality(this Person person)

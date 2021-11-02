@@ -1,23 +1,23 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 using OrderMaker.Models.Interfaces;
 
 namespace OrderMaker.Models
 {
     public class Person : IPerson
     {
-        [Description("ФИО")]
+        [Display(Name = "ФИО")]
         public string Name { get; set; }
         
-        [Description("Доп. ФИО")]
+        [Display(Name = "Доп. ФИО")]
         public string AdditionalName { get; set; }
         
-        [Description("Группа")]
+        [Display(Name = "Группа")]
         public GroupType Group { get; set; }
         
-        [Description("Специальность")]
+        [Display(Name = "Специальность")]
         public string Speciality { get; set; }
         
-        [Description("Должности")]
+        [Display(Name = "Должности")]
         public PostType[] Posts { get; set; }
     }
 }

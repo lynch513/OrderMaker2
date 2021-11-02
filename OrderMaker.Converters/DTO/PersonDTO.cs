@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace OrderMaker.Converters.DTO
 {
@@ -9,11 +8,11 @@ namespace OrderMaker.Converters.DTO
         public string Name { get; set; }
         [JsonProperty("ДопФИО")]
         public string AdditionalName { get; set; }
-        [JsonProperty("Группа", ItemConverterType = typeof(StringEnumConverter))]
+        [JsonProperty("Группа")]
         public GroupTypeDto Group { get; set; }
         [JsonProperty("Специальность")]
         public string Speciality { get; set; }
-        [JsonProperty("Должности", ItemConverterType = typeof(StringEnumConverter))]
+        [JsonProperty("Должности")]
         public PostTypeDto[] Posts { get; set; }
     }
 }

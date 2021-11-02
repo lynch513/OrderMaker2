@@ -1,18 +1,18 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OrderMaker.Models
 {
     public enum GroupType
     {
-        [Description("")]
+        [Display(Name = "")]
         None,
-        [Description("2 гр.")]
+        [Display(Name = "2 гр.")]
         Two,
-        [Description("3 гр.")]
+        [Display(Name = "3 гр.")]
         Three,
-        [Description("4 гр.")]
+        [Display(Name = "4 гр.")]
         Four,
-        [Description("5 гр.")]
+        [Display(Name = "5 гр.")]
         Five
     }
 }

@@ -1,24 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace OrderMaker.Extensions
 {
     public static class ReflectionExtensions
     {
-        public static string GetDescription<T>(this T enumerationValue) where T : struct
+        public static string GetDisplayName<T>(this T obj)
         {
-            var type = enumerationValue.GetType();
-            if (!type.IsEnum)
-                throw new ArgumentException("EnumerationValue must be of Enum type", nameof(enumerationValue));
+            var displayName = obj
+                .GetType() 
+                .GetCustomAttributes(typeof(DisplayNameAttribute), true)
+                .FirstOrDefault() as DisplayNameAttribute;
 
-            var memberInfo = type.GetMember(enumerationValue.ToString() ?? string.Empty);
-            
-            if (memberInfo.Length <= 0) 
-                return enumerationValue.ToString();
-            
-            var attrs = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-            return attrs.Length > 0 ? 
-                ((DescriptionAttribute) attrs[0]).Description : enumerationValue.ToString();
+            return displayName?.DisplayName ?? "";
         }
     }
 }

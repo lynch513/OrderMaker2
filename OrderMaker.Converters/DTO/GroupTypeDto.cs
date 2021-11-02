@@ -1,25 +1,22 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace OrderMaker.Converters.DTO
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum GroupTypeDto
     {
-        [JsonProperty("")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [EnumMember(Value = "")]
         None,
-        [JsonProperty("2гр")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [EnumMember(Value = "2гр")]
         Two,
-        [JsonProperty("3гр")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [EnumMember(Value = "3гр")]
         Three,
-        [JsonProperty("4гр")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [EnumMember(Value = "4гр")]
         Four,
-        [JsonProperty("5гр")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [EnumMember(Value = "5гр")]
         Five
     }
 }

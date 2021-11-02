@@ -1,22 +1,22 @@
-﻿using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OrderMaker.Models
 {
     public enum PostType
     {
-        [Description("Член бригады")]
+        [Display(Name = "Член бригады")]
         Member,
-        [Description("Наблюдающий")]
+        [Display(Name = "Наблюдающий")]
         Watcher,
-        [Description("Производитель работ")]
+        [Display(Name = "Производитель работ")]
         Maker,
-        [Description("Допускающий")]
+        [Display(Name = "Допускающий")]
         Admitter,
-        [Description("Ответственный руководитель работ")]
+        [Display(Name = "Ответственный руководитель работ")]
         Supervisor,
-        [Description("Выдающий наряд")]
+        [Display(Name = "Выдающий наряд")]
         Issuer,
-        [Description("Диспетчер")]
+        [Display(Name = "Диспетчер")]
         Dispatcher
     }
 }
