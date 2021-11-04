@@ -1,20 +1,19 @@
 using FluentAssertions;
 using NUnit.Framework;
+using OrderMaker.Converters.DTO;
 using OrderMaker.Models;
 
 namespace OrderMaker.Converters.Tests
 {
     public class PersonJsonConverterTests
     {
+        private Person _person;
+        private string _personString;
+        
         [SetUp]
         public void Setup()
         {
-        }
-
-        [Test]
-        public void Test1()
-        {
-            var person = new PersonBuilder()
+            _person = new PersonBuilder()
                 .SetName("Иванов И.И.")
                 .SetAdditionalName("Иванову И.И.")
                 .SetGroup(GroupType.Three)
@@ -22,7 +21,7 @@ namespace OrderMaker.Converters.Tests
                 .IsMember
                 .Build();
 
-            var personString = @"{
+            _personString = @"{
   ""ФИО"": ""Иванов И.И."",
   ""ДопФИО"": ""Иванову И.И."",
   ""Группа"": ""3гр"",
@@ -31,10 +30,22 @@ namespace OrderMaker.Converters.Tests
     ""ЧленБригады""
   ]
 }";
+        }
 
-            var converter = new PersonJsonConverter();
-            var personJson = converter.Serialize(person);
-            personJson.Should().BeEquivalentTo(personString);
+        [Test]
+        public void PersonJsonConverter_Should_Serialize_Person()
+        {
+            var converter = new JsonConverter<Person, PersonDto>();
+            var personJson = converter.Serialize(_person);
+            personJson.Should().BeEquivalentTo(_personString);
+        }
+        
+        [Test]
+        public void PersonJsonConverter_Should_Deserialize_Person()
+        {
+            var converter = new JsonConverter<Person, PersonDto>();
+            var personResult = converter.Deserialize(_personString);
+            personResult.Should().BeEquivalentTo(_person);
         }
     }
 }
