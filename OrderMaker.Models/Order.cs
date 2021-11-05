@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrderMaker.Models
 {
@@ -38,13 +40,36 @@ namespace OrderMaker.Models
         public Person Dispatcher { get; set; }
         
         [Display(Name = "Члены бригады")]
-        public Person[] Members { get; set; }
+        public List<Person> Members { get; set; }
         
-        // Служебное поле
+        // Служебные поля
         
         [Display(Name = "Имя")]
         public string Name { get; set; }
         
+        // Содержание работ
         
+        [Display(Name = "Поручается")]
+        public List<string> Assignments { get; set; }
+    
+        [Display(Name = "Мероприятия по подготовке рабочих мест")]
+        public List<(string Where, string What)> Arrangements { get; set; }
+        
+        [Display(Name = "Отдельные указания")]
+        public List<string> Instructions { get; set; }
+        
+        [Display(Name = "Разрешения на подготовку рабочих мест и на допуск")]
+        public List<(string Who, DateTime When)> PermissionAdmit { get; set; }
+        
+        // Дата и время
+        
+        [Display(Name = "Наряд выдан")]
+        public DateTime Issue { get; set; }
+        
+        [Display(Name = "К работе приступить")]
+        public DateTime WorkBegin { get; set; }
+        
+        [Display(Name = "Работу закончить")]
+        public DateTime WorkEnd { get; set; }
     }
 }

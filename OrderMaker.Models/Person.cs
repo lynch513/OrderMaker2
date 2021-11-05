@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using OrderMaker.Models.Interfaces;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrderMaker.Models
 {
-    public class Person : IPerson
+    public class Person 
     {
         [Display(Name = "ФИО")]
         public string Name { get; set; }
@@ -18,6 +18,6 @@ namespace OrderMaker.Models
         public string Speciality { get; set; }
         
         [Display(Name = "Должности")]
-        public PostType[] Posts { get; set; }
+        public HashSet<PostType> Posts { get; set; }
     }
 }

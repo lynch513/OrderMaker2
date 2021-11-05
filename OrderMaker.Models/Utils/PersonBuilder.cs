@@ -5,11 +5,14 @@ namespace OrderMaker.Models
 {
     public class PersonBuilder
     {
-        private Person _person;
+        private readonly Person _person;
 
         public PersonBuilder()
         {
-            _person = new Person();
+            _person = new Person
+            {
+                Posts = new HashSet<PostType>()
+            };
         }
 
         public PersonBuilder SetName(string name)
@@ -36,85 +39,29 @@ namespace OrderMaker.Models
             return this;
         }
 
-        public PersonBuilder SetPost(PostType post)
+        public PersonBuilder AddPost(PostType post)
         {
-            AddPost(post);
+            _person.Posts.Add(post);
             return this;
         }
 
-        public PersonBuilder IsMember
-        {
-            get
-            {
-                AddPost(PostType.Member);
-                return this;
-            }
-        }
-        
-        public PersonBuilder IsWatcher
-        {
-            get
-            {
-                AddPost(PostType.Watcher);
-                return this;
-            }
-        }
+        public PersonBuilder IsMember => AddPost(PostType.Member);
 
-        public PersonBuilder IsMaker
-        {
-            get
-            {
-                AddPost(PostType.Maker);
-                return this;
-            }
-        }
+        public PersonBuilder IsWatcher => AddPost(PostType.Watcher);
 
-        public PersonBuilder IsAdmitter
-        {
-            get
-            {
-                AddPost(PostType.Admitter);
-                return this;
-            }
-        }
+        public PersonBuilder IsMaker => AddPost(PostType.Maker);
 
-        public PersonBuilder IsSupervisor
-        {
-            get
-            {
-                AddPost(PostType.Supervisor);
-                return this;
-            }
-        }
+        public PersonBuilder IsAdmitter => AddPost(PostType.Admitter);
 
-        public PersonBuilder IsIssuer
-        {
-            get
-            {
-                AddPost(PostType.Issuer);
-                return this;
-            }
-        }
+        public PersonBuilder IsSupervisor => AddPost(PostType.Supervisor);
 
-        public PersonBuilder IsDispatcher
-        {
-            get
-            {
-                AddPost(PostType.Issuer);
-                return this;
-            }
-        }
+        public PersonBuilder IsIssuer => AddPost(PostType.Issuer);
+
+        public PersonBuilder IsDispatcher => AddPost(PostType.Issuer);
 
         public Person Build()
         {
             return _person;
-        }
-
-        private void AddPost(PostType post)
-        {
-            var posts = _person.Posts == null ? 
-                new HashSet<PostType>() { post } : new HashSet<PostType>(_person.Posts) { post };
-            _person.Posts = posts.ToArray();
         }
     }
 }
