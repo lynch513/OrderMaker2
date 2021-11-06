@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using OrderMaker.Models;
 
@@ -20,39 +19,33 @@ namespace OrderMaker.Converters.DTO
         // Ответственные за безопасное проведение работ
         
         [JsonProperty("ОтветственныйРуководительРабот")]
-        public Person Supervisor { get; set; }
+        public PersonDto Supervisor { get; set; }
         
         [JsonProperty("Допускающий")]
-        public Person Admitter { get; set; }
+        public PersonDto Admitter { get; set; }
         
         [JsonProperty("ПроизводительРабот")]
-        public Person Maker { get; set; }
+        public PersonDto Maker { get; set; }
         
         [JsonProperty("Наблюдающий")]
-        public Person Watcher { get; set; }
+        public PersonDto Watcher { get; set; }
         
         [JsonProperty("ВыдающийНаряд")]
-        public Person Issuer { get; set; }
+        public PersonDto Issuer { get; set; }
         
         [JsonProperty("ИнструктажПолучил")]
-        public Person BriefingListener { get; set; }
+        public PersonDto BriefingListener { get; set; }
         
         [JsonProperty("Диспетчер")]
-        public Person Dispatcher { get; set; }
+        public PersonDto Dispatcher { get; set; }
         
         [JsonProperty("ЧленыБригады")]
-        public Person[] Members { get; set; }
+        public PersonDto[] Members { get; set; }
         
         // Служебные поля
         
         [JsonProperty("Имя")]
         public string Name { get; set; }
-        
-        [JsonProperty("Создан")]
-        public DateTime Created { get; set; }
-        
-        [JsonProperty("Обновлен")]
-        public DateTime Updated { get; set; }
         
         // Содержание работ
         

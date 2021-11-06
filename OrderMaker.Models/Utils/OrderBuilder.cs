@@ -82,6 +82,12 @@ namespace OrderMaker.Models.Utils
             _order.Dispatcher = person;
             return this;
         }
+
+        public OrderBuilder AddMember(Person person)
+        {
+            _order.Members.Add(person);
+            return this;
+        }
         
         // Служебные поля
 
@@ -135,6 +141,11 @@ namespace OrderMaker.Models.Utils
         {
             _order.WorkEnd = workEnd;
             return this;
+        }
+
+        public Order Build()
+        {
+            return _order;
         }
     }
 }
