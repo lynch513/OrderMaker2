@@ -9,10 +9,7 @@ namespace OrderMaker.Models
 
         public PersonBuilder()
         {
-            _person = new Person
-            {
-                Posts = new HashSet<PostType>()
-            };
+            _person = new Person();
         }
 
         public PersonBuilder SetName(string name)

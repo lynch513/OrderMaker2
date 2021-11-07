@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
@@ -13,9 +14,9 @@ namespace OrderMaker.Converters.Tests
 {
     public class OrderJsonConverterTests
     {
-        private Order _order;
-        private string _orderString;
-        private JsonConverter _converter;
+        private Order? _order;
+        private string? _orderString;
+        private JsonConverter? _converter;
         private const string TestDataPath = "TestData";
         private const string OrderTestFile1 = "Order1.json";
 
@@ -101,14 +102,14 @@ namespace OrderMaker.Converters.Tests
         [Test]
         public void OrderJsonConverter_Should_Serialize_Order()
         {
-            var orderJson = _converter.Serialize<Order, OrderDto>(_order);
+            var orderJson = _converter?.Serialize<Order, OrderDto>(_order!);
             orderJson.Should().BeEquivalentTo(_orderString);
         }
         
         [Test]
         public void OrderJsonConverter_Should_Deserialize_Order()
         {
-            var orderResult = _converter.Deserialize<Order, OrderDto>(_orderString);
+            var orderResult = _converter?.Deserialize<Order, OrderDto>(_orderString!);
             orderResult.Should().BeEquivalentTo(_order);
         }
     }

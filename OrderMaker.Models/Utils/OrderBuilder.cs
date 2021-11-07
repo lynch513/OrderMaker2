@@ -9,14 +9,7 @@ namespace OrderMaker.Models.Utils
 
         public OrderBuilder()
         {
-            _order = new Order()
-            {
-                Members = new List<Person>(),
-                Arrangements = new List<(string Where, string What)>(),
-                Assignments = new List<string>(),
-                Instructions = new List<string>(),
-                PermissionAdmit = new List<(string Who, DateTime When)>()
-            };
+            _order = new Order();
         }
 
         // Заголовок

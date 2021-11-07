@@ -4,8 +4,6 @@ namespace OrderMaker.Models
 {
     public enum GroupType
     {
-        [Display(Name = "")]
-        None,
         [Display(Name = "2 гр.")]
         Two,
         [Display(Name = "3 гр.")]

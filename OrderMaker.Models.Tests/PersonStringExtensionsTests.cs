@@ -19,7 +19,6 @@ namespace OrderMaker.Models.Tests
             
             var person = new PersonBuilder()
                 .SetName(name)
-                .SetGroup(GroupType.None)
                 .Build();
 
             person.GetNameWithGroup().Should().Be(name);
@@ -71,12 +70,10 @@ namespace OrderMaker.Models.Tests
         {
             const string name = "Иванов И.И.";
             const string additionalName = "Иванову И.И.";
-            const GroupType group = GroupType.None;
             
             var person = new PersonBuilder()
                 .SetName(name)
                 .SetAdditionalName(additionalName)
-                .SetGroup(group)
                 .Build();
 
             person.GetAdditionalNameOrNameWithGroup().Should().Be(additionalName);

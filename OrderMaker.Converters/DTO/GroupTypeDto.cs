@@ -7,8 +7,6 @@ namespace OrderMaker.Converters.DTO
     [JsonConverter(typeof(StringEnumConverter))]
     public enum GroupTypeDto
     {
-        [EnumMember(Value = "")]
-        None,
         [EnumMember(Value = "2гр")]
         Two,
         [EnumMember(Value = "3гр")]

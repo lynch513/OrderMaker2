@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using AutoMapper;
 using FluentAssertions;
 using Newtonsoft.Json;
@@ -9,9 +11,9 @@ namespace OrderMaker.Converters.Tests
 {
     public class PersonJsonConverterTests
     {
-        private Person _person;
-        private string _personString;
-        private JsonConverter _converter;
+        private Person? _person;
+        private string? _personString;
+        private JsonConverter? _converter;
         
         [SetUp]
         public void Setup()
@@ -52,14 +54,14 @@ namespace OrderMaker.Converters.Tests
         [Test]
         public void PersonJsonConverter_Should_Serialize_Person()
         {
-            var personJson = _converter.Serialize<Person, PersonDto>(_person);
+            var personJson = _converter?.Serialize<Person, PersonDto>(_person!);
             personJson.Should().BeEquivalentTo(_personString);
         }
         
         [Test]
         public void PersonJsonConverter_Should_Deserialize_Person()
         {
-            var personResult = _converter.Deserialize<Person, PersonDto>(_personString);
+            var personResult = _converter?.Deserialize<Person, PersonDto>(_personString!);
             personResult.Should().BeEquivalentTo(_person);
         }
     }
