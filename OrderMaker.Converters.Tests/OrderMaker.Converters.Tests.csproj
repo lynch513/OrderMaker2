@@ -19,4 +19,10 @@
       <ProjectReference Include="..\OrderMaker.Models\OrderMaker.Models.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="TestData\Order1.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
