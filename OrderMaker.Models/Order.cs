@@ -7,6 +7,9 @@ namespace OrderMaker.Models
     public class Order
     {
         // Заголовок
+        [Display(Name = "Имя")]
+        public string Name { get; set; }
+        
         [Display(Name = "Номер")]
         public string Number { get; set; }
         
@@ -41,11 +44,6 @@ namespace OrderMaker.Models
         
         [Display(Name = "Члены бригады")]
         public List<Person> Members { get; set; }
-        
-        // Служебные поля
-        
-        [Display(Name = "Имя")]
-        public string Name { get; set; }
         
         // Содержание работ
         

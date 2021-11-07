@@ -104,5 +104,12 @@ namespace OrderMaker.Converters.Tests
             var orderJson = _converter.Serialize<Order, OrderDto>(_order);
             orderJson.Should().BeEquivalentTo(_orderString);
         }
+        
+        [Test]
+        public void OrderJsonConverter_Should_Deserialize_Order()
+        {
+            var orderResult = _converter.Deserialize<Order, OrderDto>(_orderString);
+            orderResult.Should().BeEquivalentTo(_order);
+        }
     }
 }

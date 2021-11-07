@@ -7,6 +7,9 @@ namespace OrderMaker.Converters.DTO
     public class OrderDto
     {
         // Заголовок
+        [JsonProperty("Имя")]
+        public string Name { get; set; }
+        
         [JsonProperty("Номер")]
         public string Number { get; set; }
         
@@ -41,11 +44,6 @@ namespace OrderMaker.Converters.DTO
         
         [JsonProperty("ЧленыБригады")]
         public PersonDto[] Members { get; set; }
-        
-        // Служебные поля
-        
-        [JsonProperty("Имя")]
-        public string Name { get; set; }
         
         // Содержание работ
         

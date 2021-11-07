@@ -21,7 +21,7 @@
 
     <ItemGroup>
       <None Update="TestData\Order1.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 
