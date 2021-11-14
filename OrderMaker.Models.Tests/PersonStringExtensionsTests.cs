@@ -28,8 +28,8 @@ namespace OrderMaker.Models.Tests
         public void PersonWithNameAndWithGroup_Should_Convert_ToString()
         {
             const string name = "Иванов И.И.";
+            const string groupString = "3 гр.";
             const GroupType group = GroupType.Three;
-            var groupString = group.GetDisplayName();
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -85,7 +85,7 @@ namespace OrderMaker.Models.Tests
             const string name = "Иванов И.И.";
             const string additionalName = "Иванову И.И.";
             const GroupType group = GroupType.Three;
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -101,7 +101,7 @@ namespace OrderMaker.Models.Tests
         {
             const string name = "Иванов И.И.";
             const GroupType group = GroupType.Three;
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -117,7 +117,7 @@ namespace OrderMaker.Models.Tests
             const string name = "Иванов И.И.";
             const GroupType group = GroupType.Three;
             const string speciality = "тракторист";
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -133,7 +133,7 @@ namespace OrderMaker.Models.Tests
         {
             const string name = "Иванов И.И.";
             const GroupType group = GroupType.Three;
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -149,7 +149,7 @@ namespace OrderMaker.Models.Tests
             const string name = "Иванов И.И.";
             const GroupType group = GroupType.Three;
             const string speciality = "тракторист";
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -166,7 +166,7 @@ namespace OrderMaker.Models.Tests
             const string name = "Иванов И.И.";
             const string additionalName = "Иванову И.И.";
             const GroupType group = GroupType.Three;
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)
@@ -184,7 +184,7 @@ namespace OrderMaker.Models.Tests
             const string additionalName = "Иванову И.И.";
             const GroupType group = GroupType.Three;
             const string speciality = "тракторист";
-            var groupString = group.GetDisplayName();
+            const string groupString = "3 гр.";
             
             var person = new PersonBuilder()
                 .SetName(name)

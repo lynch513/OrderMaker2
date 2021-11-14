@@ -30,6 +30,14 @@ namespace OrderMaker.Converters.Tests
           
           var config = new MapperConfiguration(cfg =>
           {
+            cfg.CreateMap<ArrangementDto, (string Where, string What)>()
+              .ConvertUsing(i => new ValueTuple<string, string>(i.Where, i.What));
+            cfg.CreateMap<(string Where, string What), ArrangementDto>()
+              .ConvertUsing(i => new ArrangementDto { Where = i.Where, What = i.What });
+            cfg.CreateMap<PermissionAdmitDto, (string Who, DateTime? When)>()
+              .ConvertUsing(i => new ValueTuple<string, DateTime?>(i.Who, i.When));
+            cfg.CreateMap<(string Who, DateTime? When), PermissionAdmitDto>()
+              .ConvertUsing(i => new PermissionAdmitDto { Who = i.Who, When = i.When });
             cfg.CreateMap<PersonDto, Person>();
             cfg.CreateMap<Person, PersonDto>();
             cfg.CreateMap<OrderDto, Order>();
@@ -70,8 +78,10 @@ namespace OrderMaker.Converters.Tests
           var person4 = new PersonBuilder()
             .SetName("Сидоров С.С.")
             .SetAdditionalName("Сидорову С.С.")
+            .SetSpeciality("диспетчер")
             .SetGroup(GroupType.Five)
             .IsIssuer
+            .IsDispatcher
             .Build();
 
           _order = new OrderBuilder()
@@ -93,6 +103,7 @@ namespace OrderMaker.Converters.Tests
             .AddArrangement("РПХХХХ", "Вкл ЗНКР и ЗНШР фХ-ХХХ")
             .AddInstruction(
               "На время производства работ, разрешается производителю работ отключать ЗН фХ-ХХХ, с последующим включением")
+            .AddPermissionAdmit(person4.GetNameWithGroupAndSpeciality(), new DateTime(2021, 11, 6 , 8, 30, 0))
             .SetIssue(new DateTime(2021, 11, 6, 8, 0, 0))
             .SetWorkBegin(new DateTime(2021, 11, 6, 9, 30, 0))
             .SetWorkEnd(new DateTime(2021, 11, 6, 20, 0, 0))

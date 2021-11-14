@@ -48,15 +48,15 @@ namespace OrderMaker.Converters.DTO
         
         [JsonProperty("Поручается")]
         public string[]? Assignments { get; set; }
-    
+
         [JsonProperty("МероприятияПоПодготовкеРабочихМест")]
-        public (string? Where, string? What)[]? Arrangements { get; set; }
-        
+        public ArrangementDto[]? Arrangements { get; set; } 
+
         [JsonProperty("ОтдельныеУказания")]
         public string[]? Instructions { get; set; }
         
         [JsonProperty("РазрешенияНаПодготовкуРабочихМестИНаДопуск")]
-        public (string? Who, DateTime? When)[]? PermissionAdmit { get; set; }
+        public PermissionAdmitDto[]? PermissionAdmit { get; set; }
         
         // Дата и время
         

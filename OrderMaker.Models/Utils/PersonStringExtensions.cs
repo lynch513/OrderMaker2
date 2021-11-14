@@ -8,7 +8,7 @@ namespace OrderMaker.Models.Utils
         {
             var name = person.Name;
             var group = person.Group;
-            return group == null ? name : $"{name} {group.GetDisplayName()}";
+            return group == null ? name : $"{name} {group.GetDisplayNameAttribute()}";
         }
 
         public static string GetAdditionalNameOrName(this Person person) =>
@@ -18,7 +18,7 @@ namespace OrderMaker.Models.Utils
         {
             var additionalNameOrName = GetAdditionalNameOrName(person);
             var group = person.Group;
-            return group == null ? additionalNameOrName : $"{additionalNameOrName} {group.GetDisplayName()}";
+            return group == null ? additionalNameOrName : $"{additionalNameOrName} {group.GetDisplayNameAttribute()}";
         }
 
         public static string GetNameWithGroupAndSpeciality(this Person person)

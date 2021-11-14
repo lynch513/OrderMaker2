@@ -7,6 +7,7 @@ namespace OrderMaker.Models
     public class Order
     {
         // Заголовок
+        
         [Display(Name = "Имя")]
         [Required] 
         public string Name { get; set; } = default!;
@@ -52,13 +53,13 @@ namespace OrderMaker.Models
         public List<string> Assignments { get; set; } = new();
 
         [Display(Name = "Мероприятия по подготовке рабочих мест")]
-        public List<(string? Where, string? What)> Arrangements { get; set; } = new();
+        public List<(string Where, string What)> Arrangements { get; set; } = new();
 
         [Display(Name = "Отдельные указания")] 
         public List<string> Instructions { get; set; } = new();
 
         [Display(Name = "Разрешения на подготовку рабочих мест и на допуск")]
-        public List<(string? Who, DateTime? When)> PermissionAdmit { get; set; } = new();
+        public List<(string Who, DateTime? When)> PermissionAdmit { get; set; } = new();
         
         // Дата и время
         

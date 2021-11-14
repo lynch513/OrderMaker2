@@ -1,19 +1,22 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 
 namespace OrderMaker.Extensions
 {
     public static class ReflectionExtensions
     {
-        public static string GetDisplayName<T>(this T obj)
+        public static string GetDisplayNameAttribute(this Enum enumValue)
         {
-            var displayName = obj
-                .GetType() 
-                .GetCustomAttributes(typeof(DisplayNameAttribute), true)
-                .FirstOrDefault() as DisplayNameAttribute;
+            var displayName = enumValue.GetType()
+                .GetMember(enumValue.ToString())
+                .FirstOrDefault()?
+                .GetCustomAttribute<DisplayAttribute>()?
+                .GetName();
 
-            return displayName?.DisplayName ?? "";
+            return string.IsNullOrEmpty(displayName) ? enumValue.ToString() : displayName;
         }
     }
 }
