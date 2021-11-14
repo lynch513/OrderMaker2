@@ -54,7 +54,7 @@ namespace OrderMaker.Models
 
         public PersonBuilder IsIssuer => AddPost(PostType.Issuer);
 
-        public PersonBuilder IsDispatcher => AddPost(PostType.Issuer);
+        public PersonBuilder IsDispatcher => AddPost(PostType.Dispatcher);
 
         public Person Build()
         {

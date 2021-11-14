@@ -54,10 +54,12 @@ namespace OrderMaker.Converters.Tests
 
           var person0 = new PersonBuilder()
             .SetName("Не назначается")
+            .IsSupervisor
             .Build();
 
           var person1 = new PersonBuilder()
             .SetName("------------")
+            .IsWatcher
             .Build();
 
           var person2 = new PersonBuilder()
