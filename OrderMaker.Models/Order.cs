@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using OrderMaker.Models.Utils;
 
 namespace OrderMaker.Models
 {
@@ -9,16 +10,20 @@ namespace OrderMaker.Models
         // Заголовок
         
         [Display(Name = "Имя")]
-        [Required] 
+        [MaxLength(200, ErrorMessage = Field.LengthExceeded)]
+        [Required(ErrorMessage = Field.IsRequired)] 
         public string Name { get; set; } = default!;
         
         [Display(Name = "Номер")]
+        [MaxLength(30, ErrorMessage = Field.LengthExceeded)]
         public string? Number { get; set; }
         
         [Display(Name = "Организация")]
+        [MaxLength(200, ErrorMessage = Field.LengthExceeded)]
         public string? Company { get; set; }
         
         [Display(Name = "Подразделение")]
+        [MaxLength(200, ErrorMessage = Field.LengthExceeded)]
         public string? Subdivision { get; set; }
         
         // Ответственные за безопасное проведение работ
@@ -64,12 +69,15 @@ namespace OrderMaker.Models
         // Дата и время
         
         [Display(Name = "Наряд выдан")]
+        [DisplayFormat(DataFormatString = Field.DataFormat)]
         public DateTime? Issue { get; set; }
         
         [Display(Name = "К работе приступить")]
+        [DisplayFormat(DataFormatString = Field.DataFormat)]
         public DateTime? WorkBegin { get; set; }
         
         [Display(Name = "Работу закончить")]
+        [DisplayFormat(DataFormatString = Field.DataFormat)]
         public DateTime? WorkEnd { get; set; }
     }
 }
