@@ -4,8 +4,9 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using OrderMaker.Converters.DTO;
 using OrderMaker.Models;
+using JsonConverter = OrderMaker.Converters.JsonConverter;
 
-namespace OrderMaker.Converters.Tests
+namespace OrderMaker.UnitTests.Converters
 {
     public class PersonJsonConverterTests
     {

@@ -1,9 +1,9 @@
 using FluentAssertions;
 using NUnit.Framework;
-using OrderMaker.Extensions;
+using OrderMaker.Models;
 using OrderMaker.Models.Utils;
 
-namespace OrderMaker.Models.Tests
+namespace OrderMaker.UnitTests.Extensions
 {
     public class PersonStringExtensionsTests
     {

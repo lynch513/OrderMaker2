@@ -1,10 +1,9 @@
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using FluentAssertions;
 using NUnit.Framework;
-using OrderMaker.Models;
+using OrderMaker.Extensions;
 
-namespace OrderMaker.Extensions.Tests
+namespace OrderMaker.UnitTests.Extensions
 {
     public class ReflectionExtensionsTests
     {

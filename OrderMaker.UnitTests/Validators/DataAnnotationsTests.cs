@@ -1,11 +1,10 @@
-using System;
-using System.IO.Pipes;
 using System.Linq;
 using FluentAssertions;
 using NUnit.Framework;
 using OrderMaker.Models;
+using OrderMaker.Validators;
 
-namespace OrderMaker.Validators.Tests
+namespace OrderMaker.UnitTests.Validators
 {
     public class DataAnnotationsForPersonTests
     {

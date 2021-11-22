@@ -9,16 +9,30 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
         <PackageReference Include="FluentAssertions" Version="6.2.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="NUnit" Version="3.13.1" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
         <PackageReference Include="coverlet.collector" Version="3.0.2" />
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\OrderMaker.Converters\OrderMaker.Converters.csproj" />
+      <ProjectReference Include="..\OrderMaker.Extensions\OrderMaker.Extensions.csproj" />
       <ProjectReference Include="..\OrderMaker.Models\OrderMaker.Models.csproj" />
+      <ProjectReference Include="..\OrderMaker.Validators\OrderMaker.Validators.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="TestData\Order1.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
@@ -9,8 +8,9 @@ using NUnit.Framework;
 using OrderMaker.Converters.DTO;
 using OrderMaker.Models;
 using OrderMaker.Models.Utils;
+using JsonConverter = OrderMaker.Converters.JsonConverter;
 
-namespace OrderMaker.Converters.Tests
+namespace OrderMaker.UnitTests.Converters
 {
     public class OrderJsonConverterTests
     {
