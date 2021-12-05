@@ -19,10 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\OrderMaker.Converters\OrderMaker.Converters.csproj" />
       <ProjectReference Include="..\OrderMaker.Extensions\OrderMaker.Extensions.csproj" />
       <ProjectReference Include="..\OrderMaker.Models\OrderMaker.Models.csproj" />
