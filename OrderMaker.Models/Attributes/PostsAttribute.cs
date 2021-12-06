@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using OrderMaker.Models.Checkers;
+using OrderMaker.Models.Validators;
 
 namespace OrderMaker.Models.Attributes
 {
@@ -17,13 +17,12 @@ namespace OrderMaker.Models.Attributes
             }
 
             var person = (Person) validationContext.ObjectInstance;
-            var personChecker = new PersonChecker(person);
+            var personChecker = new PersonValidator(person);
+            var result = personChecker.TryValidate(out var message);
 
-            var errorMessage = personChecker.ErrorMessage == null
-                ? GetErrorMessage()
-                : $"{GetErrorMessage()}: {personChecker.ErrorMessage}";
+            var errorMessage = message == null ? GetErrorMessage() : $"{GetErrorMessage()}: {message}";
 
-            return personChecker.IsValid ? ValidationResult.Success : new ValidationResult(errorMessage);
+            return result ? ValidationResult.Success : new ValidationResult(errorMessage);
         }
     }
 }

@@ -4,7 +4,7 @@ using NUnit.Framework;
 using OrderMaker.Models;
 using OrderMaker.Validators;
 
-namespace OrderMaker.UnitTests.Validators
+namespace OrderMaker.UnitTests.Models
 {
     public class DataAnnotationsForPersonTests
     {

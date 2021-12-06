@@ -1,30 +1,29 @@
 ﻿using System.Linq;
 
-namespace OrderMaker.Models.Checkers
+namespace OrderMaker.Models.Validators
 {
-    public class PersonChecker
+    public class PersonValidator
     {
         private readonly Person _person;
 
-        public bool IsValid { get; private set; }
-
-        public string? ErrorMessage { get; private set; }
-
-        public PersonChecker(Person person)
+        public PersonValidator(Person person)
         {
             _person = person;
-            Check();
         }
 
-        protected void Check()
+        public bool TryValidate(out string? message)
         {
+            message = default;
             var results = _person
                 .Posts
-                .Select(post => (Result: TryCheckPost(post, out var message), Message: message))
+                .Select(post => (Result: TryCheckPost(post, out var innerMessage), Message: innerMessage))
                 .Where(i => !i.Result)
+                .Select(i => i.Message)
                 .ToArray();
-            IsValid = results.Length != 0;
-            ErrorMessage = string.Join(", ", results.Select(i => i.Message));
+            if (results.Length > 0)
+                message = string.Join(", ", results);
+
+            return results.Length == 0;
         }
 
         private bool CanBeWatcher() =>
@@ -62,7 +61,7 @@ namespace OrderMaker.Models.Checkers
                     "не может быть выдающим разрешение на подготовку рабочих мест и на допуск",
                 _ => default
             };
-            return message != default;
+            return message == default;
         }
     }
 }
